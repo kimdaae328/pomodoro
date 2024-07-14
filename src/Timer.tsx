@@ -116,7 +116,9 @@ export default function Timer() {
       setInterval(() => {
         if (timer.seconds === 0) {
           if (timer.minutes === 0) {
-            if (interval) clearInterval(interval);
+            if (interval) {
+              clearInterval(interval);
+            }
             setTimer((prevTimer) => ({
               ...prevTimer,
               start: false,
@@ -149,7 +151,11 @@ export default function Timer() {
           }));
         }
       }, 1000);
-      if (interval) clearInterval(interval);
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
   }, [timer, setTimer, setRounds, setGoals, rounds]);
 
   const handlePause = () => {
