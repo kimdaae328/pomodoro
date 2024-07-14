@@ -1,0 +1,17 @@
+# node_modules 폴더 무시
+node_modules/
+
+# 빌드 결과물 무시
+dist/
+build/
+
+# 환경 설정 파일 무시
+.env
+
+# IDE 설정 파일 무시 (예: VSCode)
+.vscode/
+
+# 특정 파일 확장자 무시
+*.log
+*.tmp
+*.cache
